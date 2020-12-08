@@ -2,6 +2,8 @@
 
 A set of PL/pgSQL functions to monitor data changes (CDC) as a result of an arbitrary SQL query
 
+Changes are computed by comparing result of a query against a materialized view based on the same query. A query must have `_id` column which is used to join it with the materialized view.
+
 ##### Usage example:
 
 ```sql
