@@ -1,6 +1,6 @@
 ### pg_watcher
 
-A set of PL/pgSQL functions to monitor changes in result of an arbitrary SQL query
+A set of PL/pgSQL functions to monitor data changes (CDC) as a result of an arbitrary SQL query
 
 ##### Usage example:
 
@@ -15,7 +15,7 @@ add_query |
 test=# INSERT INTO books (title) VALUES ('The Very Hungry Caterpillar');
 INSERT 0 1
 
-test=# --We have 1 insert after query was added to watcher
+test=# --We have 1 insert (operation = 'I') after query was added for watching
 test=# SELECT * FROM watcher.get_changes('myquery');
 -[ RECORD 1 ]--------------------------------------------------------
 identifier | 1
